@@ -25,6 +25,7 @@ function dadosAutor(){
     <article>
         <h4>Outra chamada</h4>
         <?=dadosAutor()?>
+        
     </article>
 </section>
 </body>
