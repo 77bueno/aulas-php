@@ -20,8 +20,41 @@ $nomeSemEspaco = trim($nome);
 <pre> <?=var_dump($nomeSemEspaco)?> </pre>
 
 <hr>
+    
+    <h3>str_replace()</h3>
+<?php 
+/* Função que permite substituição de strings/caracteres. */
+$fraseFeia = "<p>Fulano é um bobão e xarope</p>";
+$fraseBunitinha = str_replace( 
+    ["xarope", "bobão"],
+    "*******",
+    $fraseFeia
+);
+?>
+<p> <?=$fraseFeia?> </p>    
+<p> <?=$fraseBunitinha?> </p> 
 
+<hr> 
+
+    <h3>explode()</h3>
+<?php 
+/* Função que transforma uma string em um array */
+$linguagens = "HTML - CSS - JS - PHP";
+$arrayLinguagens = explode(" - ", $linguagens);
+?>
+<pre><?=var_dump($linguagens)?></pre>
+<pre><?=var_dump($arrayLinguagens)?></pre>
+
+<hr>
     <h2>Númericas</h2>
+    <h3>min, max</h3>
+<?php 
+$valores = [10, 5, 50, 1000, 275];
+$valorQualquer = 1259.75;
+?>
+<p>Menor valor: <?=min($valores)?></p>
+<p>Maior valor: <?=max($valores)?></p>
+<p>Arredondamento: <?=round($valorQualquer)?></p>
 
     <h2>Arrays</h2>
 
