@@ -24,22 +24,22 @@ $alunos = [
     [
         "nome" => "Victor",
         "nota1" => 8,
-        "nota2" => 9,
+        "nota2" => 9
     ],
     [
         "nome" => "Phelipe",
         "nota1" => 5, 
-        "nota2" => 4,
+        "nota2" => 4
     ],
     [
         "nome" => "Jhon",
         "nota1" => 6,
-        "nota2" => 9,
+        "nota2" => 9
     ],
     [
         "nome" => "Eliandro",
         "nota1" => 9, 
-        "nota2" => 2,
+        "nota2" => 2
     ],
     [
         "nome" => "Eliel",
