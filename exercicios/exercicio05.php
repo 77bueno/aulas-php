@@ -34,7 +34,7 @@ $alunos = [
     [
         "nome" => "Jhon",
         "nota1" => 6,
-        "nota2" => 6,
+        "nota2" => 9,
     ],
     [
         "nome" => "Eliandro",
@@ -44,7 +44,7 @@ $alunos = [
     [
         "nome" => "Eliel",
         "nota1" => 7,
-        "nota2" => 5
+        "nota2" => 7
     ]
 ];
 
@@ -58,9 +58,9 @@ function media(float $nota1, float $nota2):float{
 
 function resultado(float $media):string{
     if ($media >= 7) {
-        return "aprovado";
+        return "<span class='aprovado'>aprovado</span>";
     } else { 
-        return "reprovado";
+        return "<span class='reprovado'>reprovado</span>";
     }
 }
 
@@ -70,8 +70,9 @@ foreach($alunos as $aluno){
         <p>Nota 1: <?=$aluno["nota1"]?> </p>
         <p>Nota 2: <?=$aluno["nota2"]?> </p>
         <p>E sua média foi: <?=media($aluno["nota1"], $aluno["nota2"])?></p>
-        <p>E você foi: <?=resultado(  media($aluno["nota1"], $aluno["nota2"])  )?></p>
+        <p>E você foi: <span class=""></span><?=resultado(  media($aluno["nota1"], $aluno["nota2"])  )?></p>
         <hr>
+
     <?php
 }
 ?>
