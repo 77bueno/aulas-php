@@ -1,3 +1,9 @@
+<?php 
+$arquivos = basename($_SERVER["PHP_SELF"]);
+echo $arquivos
+// Usar o match ou case, pra fazer o title
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,6 +19,7 @@
             <a href="index.php">Home</a>
             <a href="cursos.php">Cursos</a>
             <a href="duvidas.php">Dúvidas</a>
+            <a href="contato.php">Contato</a>
         </nav>
     </header>
 
