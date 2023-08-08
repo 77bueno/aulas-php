@@ -13,7 +13,7 @@
 /* Se os campos nome e email estão vazios */ 
 if( empty($_POST["nome"]) || empty($_POST["email"]) ){
 ?>
-    <p>Você deve preencher nome e e-mail!</p>
+    <p style="color: red;">Você deve preencher nome e e-mail!</p>
    <p><a href="10-formulario.html">Voltar!</a></p>
 <?php
 } else {
@@ -26,7 +26,12 @@ $mensagem = $_POST["mensagem"];
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
+
+        <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
+        mostre o <li> com a mensagem -->
+        <?php if( !empty($mensagem) ){ ?>
         <li>Mensagem: <?=$mensagem?></li>
+        <?php } ?>
     </ul>
 <?php
 }
