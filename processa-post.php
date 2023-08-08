@@ -17,15 +17,19 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
    <p><a href="10-formulario.html">Voltar!</a></p>
 <?php
 } else {
-
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$mensagem = $_POST["mensagem"];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $idade = $_POST["idade"];
+    $mensagem = $_POST["mensagem"];
+    $interesses = $_POST["interesses"];
+    
 ?>
     <h2>Dados:</h2>
     <ul>
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
+        <li>Idade: <?=$idade?></li>
+        <li>Interesses: <?= implode(", ", $interesses) ?></li>
 
         <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
         mostre o <li> com a mensagem -->
