@@ -1,7 +1,23 @@
 <?php 
 $arquivos = basename($_SERVER["PHP_SELF"]);
-echo $arquivos
-// Usar o match ou case, pra fazer o title
+echo $arquivos;
+switch ($arquivos) {
+    case 'index.php':
+        $titulo = "Home";
+        break;
+    case 'duvidas.php':
+        $titulo = "Dúvidas";
+        break;
+    case 'cursos.php':
+        $titulo = "Cursos";
+        break;
+    case 'contato.php':
+        $titulo = "Contato";
+        break;
+    default:
+        "Site PHP";
+        break;
+}
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +25,7 @@ echo $arquivos
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site PHP</title>
+    <title><?=$titulo?></title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
