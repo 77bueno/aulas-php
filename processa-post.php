@@ -21,7 +21,7 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
     $email = $_POST["email"];
     $idade = $_POST["idade"];
     $mensagem = $_POST["mensagem"];
-    $interesses = $_POST["interesses"];
+    $interesses = $_POST["interesses"] ??[];
     
 ?>
     <h2>Dados:</h2>
