@@ -33,6 +33,14 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
         
         <?php if( !empty($interesses) ){ ?>
             <li>Interesses: <?= implode(", ", $interesses) ?></li>
+
+            <li>Interesses: 
+                <ul>
+                    <?php foreach( $interesses as $interesse ) { ?>
+                    <li> <?=$interesse?> </li>
+                    <?php } ?>
+                </ul>
+            </li>
         <?php } ?>
 
         <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
