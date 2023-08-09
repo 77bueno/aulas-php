@@ -29,7 +29,11 @@ if( empty($_POST["nome"]) || empty($_POST["email"]) ){
         <li>Nome: <?=$nome?></li>
         <li>E-mail: <?=$email?></li>
         <li>Idade: <?=$idade?></li>
-        <li>Interesses: <?= implode(", ", $interesses) ?></li>
+        
+        
+        <?php if( !empty($interesses) ){ ?>
+            <li>Interesses: <?= implode(", ", $interesses) ?></li>
+        <?php } ?>
 
         <!-- Se a variável mensagem NÃO ESTIVER VAZIA,
         mostre o <li> com a mensagem -->
