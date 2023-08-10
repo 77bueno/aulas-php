@@ -61,6 +61,7 @@ if( isset($_POST["enviar"]) ){
     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS); 
     $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
     $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+    $precoFiltrado = filter_var($preco, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $disponibilidade =filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
     $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -75,7 +76,7 @@ if( isset($_POST["enviar"]) ){
         <h2>Seus Dados:</h2>
         <p>Nome do produto: <?=$nome?></p>
         <p>Fabricante: <?=$fabricante?></p>
-        <p>Preço: <?=number_format($preco,2,",",".")?></p>
+        <p>Preço: <?=number_format($precoFiltrado, 2,",",".")?></p>
         <?php if(!empty($disponibilidade)) { ?>
             <p>Disponibilidade: <?=$disponibilidade?> </p>
         <?php } ?>
@@ -113,7 +114,7 @@ foreach ($fabricantes as $fabricante){
         </p>
 
         <p>
-            <label for="preco">Preço:</label>
+            <label for="preco">Preço: </label>
             <input required type="number" name="preco" id="preco" min="100" max="10000000" step=".01">
         </p>
 
