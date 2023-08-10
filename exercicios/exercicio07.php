@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 07 - PHP</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+        }
+        form {
+            background-color: white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            margin-left: 650px;
+            padding-top: 0px;
+            padding: 10px;
+            width: 30%;
+        }
+
+        h1 { text-align: center; }
+
+        div {
+            background-color: white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            margin-left: 650px;
+            padding-top: 0px;
+            padding: 10px;
+            width: 30%;
+        }
+        button {
+            color: white;
+            background-color: lightblue;
+            border: none;
+            border-radius: 4px;
+            width: 70px;
+            height: 35px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: white;
+            background-color: lightskyblue;
+        }
+    </style>
 </head>
 <body>
     <h1>Exercício 07 - Simulação de Cadastro</h1>
@@ -31,7 +71,8 @@ if( isset($_POST["enviar"]) ){
         <?php
     } else {
         ?>
-        <h2>Dados processados:</h2>
+        <div>
+        <h2>Seus Dados:</h2>
         <p>Nome do produto: <?=$nome?></p>
         <p>Fabricante: <?=$fabricante?></p>
         <p>Preço: <?=number_format($preco,2,",",".")?></p>
@@ -42,7 +83,7 @@ if( isset($_POST["enviar"]) ){
         <p>Descrição: <?=$descricao?></p>
         <?php 
         } ?>
-        
+        </div>
     <?php
     }
 
