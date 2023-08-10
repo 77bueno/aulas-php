@@ -16,21 +16,36 @@ $fabricantes = [
     "Bmw" => "Bmw"
 ];
 
+
 if( isset($_POST["enviar"]) ){
-    $nome = $_POST['nome']; 
-    $fabricantes = ;
-    $preco = $_POST['preco'];
-    $disponibilidade = $_POST['disponibilidade'];
-    $descricao = $_POST['descricao'];
+    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS); 
+    $fabricante = filter_input(INPUT_POST, "fabricante", FILTER_SANITIZE_SPECIAL_CHARS);
+    $preco = filter_input(INPUT_POST, "preco", FILTER_VALIDATE_FLOAT);
+    $disponibilidade =filter_input(INPUT_POST, "disponibilidade", FILTER_SANITIZE_SPECIAL_CHARS);
+    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
 
-?>
-<h2>Dados processados:</h2>
-<p>Nome do produto: <?=$nome?></p>
-<p>Preço: <?=$preco?></p>
-<p>Disponibilidade: <?=$disponibilidade?> </p>
-<p>Descrição: <?=$descricao?></p>
+    if( empty($_POST["nome"]) || empty($_POST["preco"]) ){
+        ?>
+            <p style="color: red;">Você deve preencher nome e preço!</p>
+           <p><a href="exercicio07.php">Voltar!</a></p>
+        <?php
+    } else {
+        ?>
+        <h2>Dados processados:</h2>
+        <p>Nome do produto: <?=$nome?></p>
+        <p>Fabricante: <?=$fabricante?></p>
+        <p>Preço: <?=number_format($preco,2,",",".")?></p>
+        <?php if(!empty($disponibilidade)) { ?>
+            <p>Disponibilidade: <?=$disponibilidade?> </p>
+        <?php } ?>
+        <?php if (!empty($descricao)) { ?>
+        <p>Descrição: <?=$descricao?></p>
+        <?php 
+        } ?>
+        
+    <?php
+    }
 
-<?php
 } else {
 ?>
     <form action="" method="post"> 
@@ -40,20 +55,25 @@ if( isset($_POST["enviar"]) ){
             <input required placeholder="Digite o nome do produto:" type="text" name="nome" id="nome">
         </p>
 
+
         <p>
-            <label for="assunto">Nome do Fabricante:</label>
-            <select required name="assunto" id="assunto">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <label for="fabricante">Nome do Fabricante:</label>
+            <select required name="fabricante" id="fabricante">
+            <option value=""></option>
+<?php
+foreach ($fabricantes as $fabricante){
+?>
+
+    <option value="<?=$fabricante?>"><?=$fabricante?></option>
+<?php
+}
+?>
             </select>
         </p>
 
         <p>
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" id="preco" min="100" max="10000" step=".01">
+            <input required type="number" name="preco" id="preco" min="100" max="10000000" step=".01">
         </p>
 
         <p>
@@ -66,7 +86,7 @@ if( isset($_POST["enviar"]) ){
         </p>
 
         <p>
-            <label for="descricao">Descrição (mínimo 10 e máximo de 30)</label> <br>
+            <label for="descricao">Descrição (máximo de 30)</label> <br>
             <textarea maxlength="30" name="descricao" id="descricao" cols="25" rows="5"></textarea>
         </p>
         
