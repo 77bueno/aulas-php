@@ -18,27 +18,27 @@
 </head>
 <body>
     <?php
-    $jhonatan = array("Jhonatan", "18", "jhonatan18@gmail.com", "1234", "Masculino", "São Paulo");
-    $julia = array("Júlia", "17", "julia17@gmail.com", "5678", "Feminino", "São Paulo")
+    $bueno = array("Bueno", "16", "bueno10@gmail.com", "1234", "Masculino", "São Paulo");
+    $phelipe = array("Phelipe", "20", "phelipe@gmail.com", "5678", "Masculino", "São Paulo")
     ?>
 
     <h1>Mostrando os valores</h2>
   <section>
     <article>
       <ul>
-        <li>Nome: <b><?=$jhonatan[0]?></b></li>
-        <li>Email: <b><?=$jhonatan[2]?></b></li>
-        <li>Idade: <b><?=$jhonatan[1]?></b></li>
-        <li>Sexo: <b><?=$jhonatan[4]?></b></li>
+        <li>Nome: <b><?=$bueno[0]?></b></li>
+        <li>Email: <b><?=$bueno[2]?></b></li>
+        <li>Idade: <b><?=$bueno[1]?></b></li>
+        <li>Sexo: <b><?=$bueno[4]?></b></li>
       </ul>   
     </article>
 
     <article>
       <ul>
-        <li>Nome: <b><?=$julia[0]?></b></li>
-        <li>Email: <b><?=$julia[2]?></b></li>
-        <li>Idade: <b><?=$julia[1]?></b></li>
-        <li>Sexo: <b><?=$julia[4]?></b></li>
+        <li>Nome: <b><?=$phelipe[0]?></b></li>
+        <li>Email: <b><?=$phelipe[2]?></b></li>
+        <li>Idade: <b><?=$phelipe[1]?></b></li>
+        <li>Sexo: <b><?=$phelipe[4]?></b></li>
       </ul>
     </article>
   </section>  
